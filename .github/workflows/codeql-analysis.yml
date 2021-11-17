@@ -33,8 +33,8 @@ jobs:
           echo 'downloading SCA installer'
           pwd
           ls -l
-          wget "http://<Public_IP>:8180/ssc/downloads/Fortify_SCA_and_Apps_21.1.1_linux_x64.run"
-          wget "http://<Public_IP>:8180/ssc/downloads/fortify.license"
+          wget "http://52.90.98.182:8180/ssc/downloads/Fortify_SCA_and_Apps_21.1.1_linux_x64.run"
+          wget "http://52.90.98.182:8180/ssc/downloads/fortify.license"
           ls -l
           chmod +x "Fortify_SCA_and_Apps_21.1.1_linux_x64.run"
           
@@ -49,7 +49,7 @@ jobs:
           sourceanalyzer -b github-java-build -clean
           sourceanalyzer -b github-java-build -source 1.8 -cp "./**/*.jar" "./**/*.java" "./**/*.js" "./**/*.jsp" "./**/*.html" "./**/*.properties" "./**/*.xml"
           sourceanalyzer -b github-java-build -scan -f github-sast-report.fpr
-          fortifyclient -url http://<Public_IP>:8180/ssc -authtoken 5700ab1e-0af3-46d0-8289-e539540c3439 -application "simplisticrabbitmq" -applicationVersion "11.0" uploadFPR -file github-sast-report.fpr
+          fortifyclient -url http://52.90.98.182:8180/ssc -authtoken 5700ab1e-0af3-46d0-8289-e539540c3439 -application "simplisticrabbitmq" -applicationVersion "11.0" uploadFPR -file github-sast-report.fpr
 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.4
