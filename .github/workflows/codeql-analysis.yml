@@ -63,7 +63,7 @@ jobs:
       uses: docker://fortifydocker/fortify-vulnerability-exporter:latest
       with:
         export_config: /config/SSCToGitHub.yml
-        ssc_baseUrl: http://<Public_IP>:8180/ssc
+        ssc_baseUrl: http://52.90.98.182:8180/ssc
         ssc_authToken: 5700ab1e-0af3-46d0-8289-e539540c3439
         ssc_version_name: simplisticrabbitmq:11.0
         # Or use ssc_version_id: 1234
